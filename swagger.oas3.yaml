@@ -1,8 +1,8 @@
 #Start defining a YAML file with general information and target servers  
 openapi: 3.0.0
 info:
-  title: LemonMart
-  description: LemonMart API
+  title: Inventory
+  description: Inventory API
   version: "1.0.0"
 
 servers:
