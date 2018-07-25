@@ -1,8 +1,8 @@
 #Start defining a YAML file with general information and target servers  
 openapi: 3.0.0
 info:
-  title: Inventory
-  description: Inventory API
+  title: LemonMart
+  description: LemonMart API
   version: "1.0.0"
 
 servers:
@@ -16,7 +16,7 @@ servers:
 
 #Under components, define shared data schemas
 components:
-  schemas: 
+  schemas:
     Role:
       type: string
       enum: [clerk, cashier, manager]
@@ -112,11 +112,6 @@ paths:
             application/json: # Media type
               schema:
                 $ref: '#/components/schemas/Users'
-
-
-
-
-#Under paths, add get user by ID and update user by ID endpoints
   /user/{id}:
     get:
       description: Gets a `User` object by id
@@ -137,13 +132,13 @@ paths:
     put:
       description: Updates a `User` object given id
       parameters:
-        - in: query
+        - in: path
           name: id
           required: true
           schema:
             type: string
           description: User's unique id
-        - in: body
+        - in: query
           name: userData
           schema:
             $ref: '#/components/schemas/User'
